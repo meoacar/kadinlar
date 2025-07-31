@@ -56,7 +56,7 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 - **Image Processing**: ImageMagick/GD + WebP conversion pipeline (Yapıldı)
 
 ### 3.4 Veritabanı Mimarisi  
-- **Core Tables**: users, roles, permissions, subscriptions  
+- **Core Tables**: users, roles, permissions, subscriptions  (Yapıldı)
 - **Content Tables**: articles, categories, tags, media, comments  
 - **Astrology Tables**: zodiac_signs, birth_charts, daily_horoscopes  
 - **Community Tables**: forums, posts, messages, notifications  
