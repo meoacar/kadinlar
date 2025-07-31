@@ -136,19 +136,20 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 
 ## 5. KAZANÇ VE GELİR MODELLERİ  
 
-### 5.1 Üyelik Paketleri ve Abonelik  
+
+### 5.1 Üyelik Paketleri ve Abonelik  (Yapıldı)
 - Free: Temel içerik, sınırlı araçlar  
 - Silver: Forum, bazı premium içerikler  
 - Gold: Tüm içeriklere ve tüm astroloji araçlarına tam erişim  
 - Creator/Mentor: İçerik üretimi ve danışmanlık yapma hakkı  
 
-### 5.2 Ödeme Altyapısı  
+### 5.2 Ödeme Altyapısı  (Yapıldı)
 - Iyzico ve Stripe entegrasyonu  
 - Abonelik yönetimi (yenileme, iptal)  
 - Ödeme geçmişi ve fatura yönetimi kullanıcı ve admin panelinde  
 - Kampanya ve kupon yönetimi  
 
-### 5.3 Reklam ve Sponsorluk  
+### 5.3 Reklam ve Sponsorluk  (Yapıldı)
 - Banner alanları ve sponsor içerikler  
 - Affiliate program ve link takibi  
 - Gelir ve performans raporlaması  
