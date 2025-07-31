@@ -31,10 +31,9 @@
     </section>
 
 
-    <!-- Sağlık Araçları: BMI Hesaplayıcı -->
-    <section>
-      <BMICalculator />
-    </section>
+
+    <!-- Sayfa İçeriği: Route ile değişir -->
+    <router-view />
 
     <!-- Burç Kartları: Renkli, gradientli, animasyonlu -->
     <section class="zodiac-cards">
