@@ -57,8 +57,8 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 
 ### 3.4 Veritabanı Mimarisi  
 - **Core Tables**: users, roles, permissions, subscriptions  (Yapıldı)
-- **Content Tables**: articles, categories, tags, media, comments  
-- **Astrology Tables**: zodiac_signs, birth_charts, daily_horoscopes  
+- **Content Tables**: articles, categories, tags, media, comments  (Yapıldı)
+- **Astrology Tables**: zodiac_signs, birth_charts, daily_horoscopes  (Yapıldı)
 - **Community Tables**: forums, posts, messages, notifications  
 - **Analytics Tables**: user_activities, page_views, events  
 - **Payment Tables**: invoices, transactions, payment_methods  
