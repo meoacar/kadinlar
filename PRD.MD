@@ -75,7 +75,7 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 - Her rol için ayrı erişim hakları (örneğin; danışmanlar astroloji araçlarına erişebilir)  
 - Üyelik paketleri ve abonelik sistemi  
 
-### 4.2 Kişisel Profil  
+### 4.2 Kişisel Profil  (Yapıldı)
 - Kullanıcı bilgileri: İsim, e-posta, fotoğraf, biyografi, sosyal medya linkleri  
 - **Doğum tarihi alanı zorunlu, doğum saati ve yeri opsiyonel**  
 - Doğum tarihine göre otomatik **burç hesaplama**, profil sayfasında burç ismi, sembolü, renk paleti ve detaylı açıklamalar (kişilik özellikleri, güçlü/zaaf yönler)  
