@@ -218,20 +218,20 @@ export default {
         // Başarılı yanıt backend formatına göre işleniyor
         if (response.data.token) {
           this.success = this.isLogin ? 'Giriş başarılı!' : 'Kayıt başarılı!'
-          // Kullanıcıyı backend'den tekrar çekmek için /user endpointi kullanılabilir
-          // Ancak örnek olarak token ve user'ı localde tutuyoruz
           localStorage.setItem('auth_token', response.data.token)
           axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`
 
           // Kullanıcıyı çek
           let user = response.data.user
           if (!user) {
-            // Eğer user bilgisi dönmediyse /user endpointinden çek
             const userRes = await axios.get('/user')
             user = userRes.data
           }
           this.user = user
           this.$emit('auth-success', { user, token: response.data.token })
+
+          // Başarılı giriş/kayıt sonrası ana sayfa içeriğini göstermek için sayfayı yenile
+          window.location.reload()
         }
       } catch (err) {
         console.error('Auth Error:', err)
