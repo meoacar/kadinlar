@@ -1,4 +1,88 @@
 <template>
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 to-purple-100">
+    <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
+      <h2 class="text-2xl font-bold mb-6 text-center text-pink-600">Kayıt Ol</h2>
+      <form @submit.prevent="register">
+        <div class="mb-4">
+          <label class="block text-gray-700">Ad Soyad</label>
+          <input v-model="registerForm.name" type="text" class="w-full border rounded px-3 py-2 mt-1" required />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">E-posta</label>
+          <input v-model="registerForm.email" type="email" class="w-full border rounded px-3 py-2 mt-1" required />
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700">Şifre</label>
+          <input v-model="registerForm.password" type="password" class="w-full border rounded px-3 py-2 mt-1" required />
+        </div>
+        <button type="submit" class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">Kayıt Ol</button>
+      </form>
+      <div v-if="registerError" class="mt-4 text-red-500 text-center">{{ registerError }}</div>
+      <div v-if="registerSuccess" class="mt-4 text-green-500 text-center">Kayıt başarılı! Giriş yapabilirsiniz.</div>
+      <hr class="my-8" />
+      <h2 class="text-2xl font-bold mb-6 text-center text-purple-600">Giriş Yap</h2>
+      <form @submit.prevent="login">
+        <div class="mb-4">
+          <label class="block text-gray-700">E-posta</label>
+          <input v-model="loginForm.email" type="email" class="w-full border rounded px-3 py-2 mt-1" required />
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700">Şifre</label>
+          <input v-model="loginForm.password" type="password" class="w-full border rounded px-3 py-2 mt-1" required />
+        </div>
+        <button type="submit" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Giriş Yap</button>
+      </form>
+      <div v-if="loginError" class="mt-4 text-red-500 text-center">{{ loginError }}</div>
+      <div v-if="loginSuccess" class="mt-4 text-green-500 text-center">Giriş başarılı! Hoş geldiniz.</div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import axios from 'axios'
+
+const registerForm = ref({ name: '', email: '', password: '' })
+const loginForm = ref({ email: '', password: '' })
+const registerError = ref('')
+const registerSuccess = ref(false)
+const loginError = ref('')
+const loginSuccess = ref(false)
+
+const API_URL = 'http://localhost:8000/api'
+
+async function register() {
+  registerError.value = ''
+  registerSuccess.value = false
+  try {
+    await axios.post(`${API_URL}/register`, registerForm.value)
+    registerSuccess.value = true
+    registerForm.value = { name: '', email: '', password: '' }
+  } catch (err) {
+    registerError.value = err.response?.data?.message || 'Kayıt başarısız.'
+  }
+}
+
+async function login() {
+  loginError.value = ''
+  loginSuccess.value = false
+  try {
+    const res = await axios.post(`${API_URL}/login`, loginForm.value)
+    localStorage.setItem('token', res.data.token)
+    loginSuccess.value = true
+    loginForm.value = { email: '', password: '' }
+  } catch (err) {
+    loginError.value = err.response?.data?.error || 'Giriş başarısız.'
+  }
+}
+</script>
+
+<style scoped>
+body {
+  font-family: 'Inter', sans-serif;
+}
+</style>
+<template>
   <div class="auth-container">
     <div class="auth-card">
       <div class="auth-header">
