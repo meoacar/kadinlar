@@ -117,14 +117,16 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 - Vücut Kitle İndeksi (BMI) hesaplayıcı  
 - Günlük kalori ve su tüketimi takibi  
 
-### 4.6 Topluluk ve Sosyal Etkileşim  
+
+
+### 4.6 Topluluk ve Sosyal Etkileşim  (Yapıldı)
 - Forumlar: Kategorilere ayrılmış, moderasyonlu  
 - Özel mesajlaşma (premium üyeler için)  
 - Anonim soru-cevap sistemi  
 - Oylama, yorum ve etkileşim  
 - Kullanıcı içerik üretimi ve paylaşımı (blog yazısı, video)  
 
-### 4.7 Eğitim ve Canlı Etkinlikler  
+### 4.7 Eğitim ve Canlı Etkinlikler  (Yapıldı)
 - Online kurs platformu (video, quiz, sertifika)  
 - Eğitmen ve uzman profilleri  
 - Canlı yayın entegrasyonu ve arşiv  
