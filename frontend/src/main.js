@@ -1,10 +1,9 @@
 
-
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
 import axios from 'axios'
 import './assets/app.css'
+import router from './router/index.js'
 
 // Axios global config
 axios.defaults.baseURL = 'http://localhost:8000/api'
@@ -14,6 +13,6 @@ const app = createApp(App)
 
 // Make axios available globally
 app.config.globalProperties.$axios = axios
-
 app.use(router)
+
 app.mount('#app')
