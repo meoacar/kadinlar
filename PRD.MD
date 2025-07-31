@@ -107,7 +107,7 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 9. Forum & Topluluk: Destek grupları, soru-cevap  
 10. Akademi: Online eğitimler, sertifikalar, webinarlar  
 
-### 4.5 Astroloji & Hesaplama Araçları  
+### 4.5 Astroloji & Hesaplama Araçları  (Yapıldı)
 - **Doğum haritası hesaplayıcı** (tarih, saat, yer bazlı)  
 - Burç uyumu testi (isim ve burç bazlı)  
 - Retro ve önemli gökyüzü olayları takvimi  
