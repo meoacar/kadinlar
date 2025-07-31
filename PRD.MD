@@ -67,9 +67,9 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 
 ---
 
-## 4. KULLANICI ARAYÜZÜ VE ÖZELLİKLERİ  
+## 4. KULLANICI ARAYÜZÜ VE ÖZELLİKLERİ  (Devam Ediliyor)
 
-### 4.1 Kayıt, Giriş ve Roller  
+### 4.1 Kayıt, Giriş ve Roller  (Yapıldı)
 - Kayıt: E-posta doğrulama, Google ve Facebook OAuth  
 - Roller: Standart Üye, Silver, Gold, Astroloji Danışmanı, İçerik Üreticisi, Eğitmen, Admin  
 - Her rol için ayrı erişim hakları (örneğin; danışmanlar astroloji araçlarına erişebilir)  
