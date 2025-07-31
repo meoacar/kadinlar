@@ -3,7 +3,7 @@ import App from './App.vue'
 import axios from 'axios'
 
 // Axios global config
-axios.defaults.baseURL = 'http://localhost:8000/api'
+axios.defaults.baseURL = 'http://localhost:8001/api'
 axios.defaults.headers.common['Content-Type'] = 'application/json'
 
 const app = createApp(App)
