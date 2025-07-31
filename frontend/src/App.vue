@@ -30,6 +30,12 @@
       </div>
     </section>
 
+
+    <!-- Sağlık Araçları: BMI Hesaplayıcı -->
+    <section>
+      <BMICalculator />
+    </section>
+
     <!-- Burç Kartları: Renkli, gradientli, animasyonlu -->
     <section class="zodiac-cards">
       <div v-for="z in zodiacs" :key="z.name" class="zodiac-card" :style="{background: z.bg}">
@@ -44,7 +50,9 @@
 
 <script>
 
+
 import Navbar from './components/Navbar.vue'
+import BMICalculator from './components/BMICalculator.vue'
 import ZodiacCalculator from './components/ZodiacCalculator.vue'
 import AuthForm from './components/AuthForm.vue'
 import AdminDashboard from './components/AdminDashboard.vue'
@@ -54,6 +62,7 @@ export default {
   name: 'App',
   components: {
     Navbar,
+    BMICalculator,
     ZodiacCalculator,
     AuthForm,
     AdminDashboard

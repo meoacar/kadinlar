@@ -1,3 +1,8 @@
+
+use App\Http\Controllers\HealthToolsController;
+
+// Sağlık Araçları: BMI Hesaplama
+Route::post('/health/bmi', [HealthToolsController::class, 'bmi']);
 <?php
 
 use Illuminate\Http\Request;

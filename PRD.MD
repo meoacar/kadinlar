@@ -398,22 +398,22 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 ### 15.3 FAZE 3: ASTROLOJİ ÖZELLİKLERİ (Hafta 6-7)  (Yapıldı)
 ```
 🌟 Astroloji Araçları:
-□ Birth chart calculator
-□ Zodiac compatibility checker
-□ Daily horoscope system
-□ Tarot card drawer
-□ Astrology calendar
+□ Birth chart calculator (Yapıldı)
+□ Zodiac compatibility checker (Yapıldı)
+□ Daily horoscope system (Yapıldı)
+□ Tarot card drawer (Yapıldı)
+□ Astrology calendar (Yapıldı)
 
 📊 Hesaplayıcılar:
-□ Menstrual cycle tracker
-□ Pregnancy calculator
-□ BMI calculator
-□ Calorie tracker
+□ Menstrual cycle tracker (Yapıldı)
+□ Pregnancy calculator (Yapıldı)
+□ BMI calculator (Yapıldı)
+□ Calorie tracker (Yapıldı)
 
 🎯 Çıktılar:
-- Benzersiz astroloji araçları
-- Kişiselleştirilmiş günlük öneriler
-- Sağlık takip araçları
+- Benzersiz astroloji araçları (Yapıldı)
+- Kişiselleştirilmiş günlük öneriler (Yapıldı)
+- Sağlık takip araçları (Yapıldı)
 ```
 
 ### 15.4 FAZE 4: TOPLULUK VE EKONOMİ (Hafta 8-10)  (Yapıldı)
