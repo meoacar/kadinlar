@@ -38,22 +38,22 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 - CDN kullanımı (Cloudflare vb.) mutlaka önerilir  
 
 ### 3.2 Yazılım Mimarisi  
-- Backend: Laravel 10.x, API destekli, hafif ve optimize  
-- Frontend: Tailwind CSS + Vue.js modüler bileşenler  
-- Veritabanı: MySQL, index ve sorgu optimizasyonlu  
-- Ödeme Sistemleri: Iyzico, Stripe (abonelik, tek seferlik ödeme)  
-- Medya Yönetimi: Optimize edilmiş WebP formatı, lazy loading  
-- Güvenlik: SSL zorunlu, CSRF, XSS korumaları, rol tabanlı erişim  
+- Backend: Laravel 10.x, API destekli, hafif ve optimize  (Yapıldı)
+- Frontend: Tailwind CSS + Vue.js modüler bileşenler  (Yapıldı)
+- Veritabanı: MySQL, index ve sorgu optimizasyonlu  (Yapıldı)
+- Ödeme Sistemleri: Iyzico, Stripe (abonelik, tek seferlik ödeme)
+- Medya Yönetimi: Optimize edilmiş WebP formatı, lazy loading (Yapıldı)
+- Güvenlik: SSL zorunlu (Yapıldı), CSRF, XSS korumaları (Yapıldı), rol tabanlı erişim (Yapıldı)
 
 ### 3.3 Detaylı Teknik Mimari  
-- **API Yapısı**: RESTful API + GraphQL (gelişmiş sorgular için)  
-- **Authentication**: JWT token + refresh token sistemi  
-- **Cache Katmanları**: Redis (session, query cache), Memcached (object cache)  
-- **File Storage**: Local storage + CDN (Cloudflare R2/AWS S3 uyumlu)  
-- **Queue System**: Laravel Queue + Redis (email, notification işlemleri)  
-- **Real-time**: Pusher/WebSocket (canlı bildirimler, chat)  
-- **Search Engine**: Laravel Scout + Elasticsearch/Algolia  
-- **Image Processing**: ImageMagick/GD + WebP conversion pipeline  
+- **API Yapısı**: RESTful API + GraphQL (gelişmiş sorgular için)
+- **Authentication**: JWT token + refresh token sistemi (Yapıldı)
+- **Cache Katmanları**: Redis (session, query cache), Memcached (object cache) (Yapıldı)
+- **File Storage**: Local storage + CDN (Cloudflare R2/AWS S3 uyumlu) (Yapıldı)
+- **Queue System**: Laravel Queue + Redis (email, notification işlemleri) (Yapıldı)
+- **Real-time**: Pusher/WebSocket (canlı bildirimler, chat)
+- **Search Engine**: Laravel Scout + Elasticsearch/Algolia
+- **Image Processing**: ImageMagick/GD + WebP conversion pipeline (Yapıldı)
 
 ### 3.4 Veritabanı Mimarisi  
 - **Core Tables**: users, roles, permissions, subscriptions  

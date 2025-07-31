@@ -48,6 +48,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'show']);
     Route::post('/profile', [ProfileController::class, 'update']);
     Route::get('/zodiac', [ZodiacController::class, 'calculate']);
+    Route::post('/refresh', [\App\Http\Controllers\AuthController::class, 'refresh']);
 });
 
 Route::post('/login', function (Request $request) {
