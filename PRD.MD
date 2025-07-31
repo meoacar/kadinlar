@@ -62,8 +62,8 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 - **Community Tables**: forums, posts, messages, notifications  (Yapıldı)
 - **Analytics Tables**: user_activities, page_views, events  
 - **Payment Tables**: invoices, transactions, payment_methods  
-- **Index Strategy**: Composite indexes, full-text search indexes  
-- **Partitioning**: Büyük tablolar için tarih bazlı partitioning  
+- **Index Strategy**: Composite indexes, full-text search indexes  (Yapıldı)
+- **Partitioning**: Büyük tablolar için tarih bazlı partitioning  (Yapıldı)
 
 ---
 
