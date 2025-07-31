@@ -1,3 +1,4 @@
+
 <template>
   <header class="header">
     <div class="logo-area">
@@ -5,11 +6,11 @@
       <h1 class="logo-text">KadinAtlasi.com</h1>
     </div>
     <nav>
-      <router-link to="/" class="nav-link">Ana Sayfa</router-link>
-      <router-link to="/zodiac" class="nav-link">Burçlar</router-link>
-      <router-link to="/categories" class="nav-link">Kategoriler</router-link>
-      <router-link to="/forum" class="nav-link">Forum</router-link>
-      <router-link to="/login" class="nav-link">Giriş</router-link>
+      <a href="#" class="nav-link">Ana Sayfa</a>
+      <a href="#" class="nav-link">Burçlar</a>
+      <a href="#" class="nav-link">Kategoriler</a>
+      <a href="#" class="nav-link">Forum</a>
+      <a href="#" class="nav-link">Giriş</a>
     </nav>
   </header>
 </template>
@@ -60,5 +61,19 @@ nav {
 }
 .nav-link:hover {
   color: #E91E63;
+}
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.2rem;
+  }
+  nav {
+    gap: 1rem;
+    margin-top: 0.7rem;
+  }
+  .logo-text {
+    font-size: 1.3rem;
+  }
 }
 </style>
