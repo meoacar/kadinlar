@@ -51,20 +51,7 @@
       </div>
     </section>
 
-    <!-- Kullanıcı Girişi ve Dashboard -->
-    <div class="user-area">
-      <AdminDashboard v-if="currentUser && currentUser.role === 'admin'" :currentUser="currentUser" @logout="logout" />
-      <div v-else>
-        <AuthForm v-if="!currentUser" @auth-success="handleAuthSuccess" />
-        <div v-else>
-          <div class="user-welcome">
-            <h2>Hoş geldin, {{ currentUser.first_name }}! {{ currentUser.zodiac_sign?.symbol }}</h2>
-            <button @click="logout" class="logout-btn">Çıkış Yap</button>
-          </div>
-          <ZodiacCalculator />
-        </div>
-      </div>
-    </div>
+    <!-- Kullanıcı Girişi ve Dashboard ana sayfadan kaldırıldı -->
   </div>
 </template>
 
