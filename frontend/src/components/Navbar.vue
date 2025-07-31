@@ -1,104 +1,4 @@
 
-<template>
-  <header class="header">
-    <div class="logo-area">
-      <img src="/logo.png" alt="KadinAtlasi Logo" class="logo-img" />
-      <h1 class="logo-text">KadinAtlasi.com</h1>
-    </div>
-    <nav>
-      <a href="#" class="nav-link">Ana Sayfa</a>
-      <a href="#" class="nav-link">Burçlar</a>
-      <a href="#" class="nav-link">Kategoriler</a>
-      <a href="#" class="nav-link">Forum</a>
-      <div class="nav-dropdown" ref="dropdown">
-        <button class="nav-link nav-link-dropdown" @click="toggleDropdown">
-          Araçlar <span style="font-size:0.9em">▼</span>
-        </button>
-        <transition name="fade-slide">
-          <div v-if="showTools" class="dropdown-menu">
-            <router-link to="/bmi" class="dropdown-item" @click="closeDropdown">BMI Hesaplayıcı</router-link>
-            <a href="#" class="dropdown-item" @click="closeDropdown">Regl Takvimi</a>
-            <a href="#" class="dropdown-item" @click="closeDropdown">Gebelik Hesaplama</a>
-            <a href="#" class="dropdown-item" @click="closeDropdown">Kalori Takibi</a>
-          </div>
-        </transition>
-      </div>
-      <a href="#" class="nav-link">Giriş</a>
-    </nav>
-  </header>
-</template>
-
-<script>
-export default {
-  name: 'Navbar',
-  data() {
-    return {
-      showTools: false
-    }
-  },
-  mounted() {
-    document.addEventListener('click', this.handleClickOutside)
-  },
-  beforeUnmount() {
-    document.removeEventListener('click', this.handleClickOutside)
-  },
-  methods: {
-    toggleDropdown(e) {
-      e.stopPropagation()
-      this.showTools = !this.showTools
-    },
-    closeDropdown() {
-      this.showTools = false
-    },
-    handleClickOutside(e) {
-      if (this.showTools && this.$refs.dropdown && !this.$refs.dropdown.contains(e.target)) {
-        this.showTools = false
-      }
-    }
-  }
-}
-
-<style scoped>
-/* Animasyon ve modern dropdown stilleri */
-.nav-dropdown {
-  position: relative;
-}
-.nav-link-dropdown {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  background: none;
-  border: none;
-  outline: none;
-  font: inherit;
-  padding: 0;
-}
-.dropdown-menu {
-  position: absolute;
-  top: 2.2rem;
-  left: 0;
-  background: linear-gradient(135deg, #F3E5F5, #FFEBEE);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(156,39,176,0.13), 0 1.5px 8px #E1F5FE;
-  min-width: 210px;
-  z-index: 20;
-  padding: 0.7rem 0;
-  animation: fadeIn 0.22s;
-  border: 1.5px solid #E1F5FE;
-}
-.dropdown-item {
-  display: block;
-  padding: 0.85rem 1.3rem;
-  color: #9C27B0;
-  text-decoration: none;
-  font-size: 1.08rem;
-  transition: background 0.18s, color 0.18s;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  border-radius: 8px;
-}
 .dropdown-item:hover {
   background: #FFE4E6;
   color: #E91E63;
@@ -123,7 +23,7 @@ export default {
   }
 }
 
-</script>
+
 
 <style scoped>
 /* Dropdown Menü ve Navbar stilleri */
