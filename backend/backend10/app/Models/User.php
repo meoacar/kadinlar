@@ -57,4 +57,14 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Send the email verification notification using the custom notification.
+     *
+     * @return void
+     */
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new \App\Notifications\CustomVerifyEmail);
+    }
 }

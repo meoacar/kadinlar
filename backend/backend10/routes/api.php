@@ -1,4 +1,3 @@
-use App\Http\Controllers\ZodiacController;
 <?php
 
 use Illuminate\Http\Request;
@@ -24,6 +23,9 @@ use Illuminate\Http\JsonResponse;
 
 use App\Http\Controllers\ProfileController;
 
+
+use Illuminate\Auth\Events\Registered;
+
 Route::post('/register', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|string|max:255',
@@ -38,8 +40,28 @@ Route::post('/register', function (Request $request) {
         'email' => $request->email,
         'password' => Hash::make($request->password),
     ]);
+    event(new Registered($user)); // Send verification email
     $token = JWTAuth::fromUser($user);
-    return response()->json(['user' => $user, 'token' => $token]);
+    return response()->json(['user' => $user, 'token' => $token, 'must_verify_email' => true]);
+});
+
+// Email verification routes
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Support\Facades\Auth;
+
+Route::middleware(['auth:api'])->group(function () {
+    Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+        $request->fulfill();
+        return response()->json(['message' => 'Email verified!']);
+    })->name('verification.verify');
+
+    Route::post('/email/verification-notification', function (Request $request) {
+        if ($request->user()->hasVerifiedEmail()) {
+            return response()->json(['message' => 'Already verified']);
+        }
+        $request->user()->sendEmailVerificationNotification();
+        return response()->json(['message' => 'Verification link sent!']);
+    })->name('verification.send');
 });
 
 
@@ -47,7 +69,7 @@ Route::post('/register', function (Request $request) {
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'show']);
     Route::post('/profile', [ProfileController::class, 'update']);
-    Route::get('/zodiac', [ZodiacController::class, 'calculate']);
+    Route::get('/zodiac', ['App\\Http\\Controllers\\ZodiacController', 'calculate']);
     Route::post('/refresh', [\App\Http\Controllers\AuthController::class, 'refresh']);
 });
 
