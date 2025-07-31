@@ -20,11 +20,29 @@
       </div>
     </section>
 
-    <!-- Authentication Form -->
-    <AuthForm @auth-success="handleAuthSuccess" />
+    <!-- Admin Dashboard for admin users -->
+    <AdminDashboard 
+      v-if="currentUser && currentUser.role === 'admin'"
+      :currentUser="currentUser"
+      @logout="logout"
+    />
 
-    <!-- Zodiac Calculator -->
-    <ZodiacCalculator />
+    <!-- Regular content for non-admin users -->
+    <div v-else>
+      <!-- Authentication Form -->
+      <AuthForm v-if="!currentUser" @auth-success="handleAuthSuccess" />
+
+      <!-- User Dashboard or Zodiac Calculator -->
+      <div v-else>
+        <div class="user-welcome">
+          <h2>Hoş geldin, {{ currentUser.first_name }}! {{ currentUser.zodiac_sign?.symbol }}</h2>
+          <button @click="logout" class="logout-btn">Çıkış Yap</button>
+        </div>
+        
+        <!-- Zodiac Calculator -->
+        <ZodiacCalculator />
+      </div>
+    </div>
 
     <!-- Features -->
     <section class="features">
@@ -50,12 +68,15 @@
 <script>
 import ZodiacCalculator from './components/ZodiacCalculator.vue'
 import AuthForm from './components/AuthForm.vue'
+import AdminDashboard from './components/AdminDashboard.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
     ZodiacCalculator,
-    AuthForm
+    AuthForm,
+    AdminDashboard
   },
   data() {
     return {
@@ -67,8 +88,31 @@ export default {
       this.currentUser = data.user
       console.log('User logged in:', data.user)
       
-      // Show success message
-      alert(`Hoş geldin ${data.user.first_name}! Burcun: ${data.user.zodiac_sign?.name} ${data.user.zodiac_sign?.symbol}`)
+      // Set axios authorization header
+      axios.defaults.headers.common['Authorization'] = `Bearer ${data.token}`
+      
+      // Show success message based on role
+      if (data.user.role === 'admin') {
+        alert(`🌈 Admin olarak hoş geldin ${data.user.first_name}! Admin paneline yönlendiriliyorsun...`)
+      } else {
+        alert(`Hoş geldin ${data.user.first_name}! Burcun: ${data.user.zodiac_sign?.name} ${data.user.zodiac_sign?.symbol}`)
+      }
+    },
+    
+    logout() {
+      this.currentUser = null
+      localStorage.removeItem('auth_token')
+      delete axios.defaults.headers.common['Authorization']
+      alert('Başarıyla çıkış yaptın! 👋')
+    }
+  },
+  
+  // Check for existing token on app load
+  mounted() {
+    const token = localStorage.getItem('auth_token')
+    if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+      // TODO: Verify token validity and get user data
     }
   }
 }
@@ -202,6 +246,41 @@ nav {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* User Welcome Section */
+.user-welcome {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #E8F4FD, #FFE4E6);
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid rgba(233, 30, 99, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.user-welcome h2 {
+  color: #E91E63;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.logout-btn {
+  background: linear-gradient(45deg, #E91E63, #FF9800);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
 }
 
 body {
