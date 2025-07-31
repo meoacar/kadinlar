@@ -20,6 +20,9 @@
       </div>
     </section>
 
+    <!-- Authentication Form -->
+    <AuthForm @auth-success="handleAuthSuccess" />
+
     <!-- Zodiac Calculator -->
     <ZodiacCalculator />
 
@@ -46,11 +49,27 @@
 
 <script>
 import ZodiacCalculator from './components/ZodiacCalculator.vue'
+import AuthForm from './components/AuthForm.vue'
 
 export default {
   name: 'App',
   components: {
-    ZodiacCalculator
+    ZodiacCalculator,
+    AuthForm
+  },
+  data() {
+    return {
+      currentUser: null
+    }
+  },
+  methods: {
+    handleAuthSuccess(data) {
+      this.currentUser = data.user
+      console.log('User logged in:', data.user)
+      
+      // Show success message
+      alert(`Hoş geldin ${data.user.first_name}! Burcun: ${data.user.zodiac_sign?.name} ${data.user.zodiac_sign?.symbol}`)
+    }
   }
 }
 </script>
