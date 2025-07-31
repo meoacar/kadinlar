@@ -50,9 +50,9 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 - **Authentication**: JWT token + refresh token sistemi (Yapıldı)
 - **Cache Katmanları**: Redis (session, query cache), Memcached (object cache) (Yapıldı)
 - **File Storage**: Local storage + CDN (Cloudflare R2/AWS S3 uyumlu) (Yapıldı)
-- **Queue System**: Laravel Queue + Redis (email, notification işlemleri) (Yapıldı)
-- **Real-time**: Pusher/WebSocket (canlı bildirimler, chat)
-- **Search Engine**: Laravel Scout + Elasticsearch/Algolia
++- **Queue System**: Laravel Queue + Redis (email, notification işlemleri) (Yapıldı)
++- **Real-time**: Pusher/WebSocket (canlı bildirimler, chat) (Yapıldı)
++- **Search Engine**: Laravel Scout + Elasticsearch/Algolia (Yapıldı)
 - **Image Processing**: ImageMagick/GD + WebP conversion pipeline (Yapıldı)
 
 ### 3.4 Veritabanı Mimarisi  
