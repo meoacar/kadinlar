@@ -376,18 +376,18 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 ### 15.2 FAZE 2: CORE ÖZELLİKLER (Hafta 3-5)  (Yapıldı)
 ```
 👤 Kullanıcı Sistemi:
-□ User registration/login (email verification)
+✅ User registration/login (email verification) (Yapıldı)
 ✅ Profile management + photo upload (Yapıldı)
 ✅ Zodiac sign calculation (automatic) (Yapıldı)
 ✅ Role-based access control (Yapıldı)
-□ Subscription management
+✅ Subscription management (Yapıldı)
 
 📝 İçerik Sistemi:
-□ Article creation/management
-□ Category/tag system
-□ Media library + WebP optimization
-□ Basic content display (frontend)
-□ Search functionality
+✅ Article creation/management (Yapıldı)
+✅ Category/tag system (Yapıldı)
+✅ Media library + WebP optimization (Yapıldı)
+✅ Basic content display (frontend) (Yapıldı)
+✅ Search functionality (Yapıldı)
 
 🎯 Çıktılar:
 - Tam fonksiyonel kullanıcı sistemi
