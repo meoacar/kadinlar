@@ -190,7 +190,7 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 - Rol tabanlı erişim kontrolü  
 - İki faktörlü kimlik doğrulama (isteğe bağlı)  
 - Spam ve kötü içerik filtreleri  
-- Destek talepleri yönetimi (ticket sistemi)
+- Destek talepleri yönetimi (ticket sistemi)  
 
 ### 6.6 Gelişmiş Güvenlik ve KVKV Uyumluluğu  
 - **Veri Şifreleme**: AES-256 ile hassas veri şifreleme  
