@@ -10,6 +10,15 @@
       <a href="#" class="nav-link">Burçlar</a>
       <a href="#" class="nav-link">Kategoriler</a>
       <a href="#" class="nav-link">Forum</a>
+      <div class="nav-dropdown" @mouseenter="showTools = true" @mouseleave="showTools = false">
+        <a href="#" class="nav-link nav-link-dropdown">Araçlar <span style="font-size:0.9em">▼</span></a>
+        <div v-if="showTools" class="dropdown-menu">
+          <router-link to="/bmi" class="dropdown-item">BMI Hesaplayıcı</router-link>
+          <a href="#" class="dropdown-item">Regl Takvimi</a>
+          <a href="#" class="dropdown-item">Gebelik Hesaplama</a>
+          <a href="#" class="dropdown-item">Kalori Takibi</a>
+        </div>
+      </div>
       <a href="#" class="nav-link">Giriş</a>
     </nav>
   </header>
@@ -17,9 +26,55 @@
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  data() {
+    return {
+      showTools: false
+    }
+  }
 }
 </script>
+/* Dropdown Menü */
+.nav-dropdown {
+  position: relative;
+}
+.nav-link-dropdown {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 2.2rem;
+  left: 0;
+  background: linear-gradient(135deg, #F3E5F5, #FFEBEE);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(156,39,176,0.08);
+  min-width: 180px;
+  z-index: 10;
+  padding: 0.5rem 0;
+  animation: fadeIn 0.2s;
+}
+.dropdown-item {
+  display: block;
+  padding: 0.7rem 1.2rem;
+  color: #9C27B0;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+.dropdown-item:hover {
+  background: #FFE4E6;
+  color: #E91E63;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 <style scoped>
 .header {
