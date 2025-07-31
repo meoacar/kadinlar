@@ -126,5 +126,6 @@ return [
         // ...existing code...
         Laravel\Sanctum\SanctumServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
+        Illuminate\Database\DatabaseServiceProvider::class,
     ],
 ];
