@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ZodiacController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,15 @@ Route::prefix('auth')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::post('/logout-all', [AuthController::class, 'logoutAll']);
     });
+});
+
+// Admin Routes - Colorful admin panel 🌈
+Route::prefix('admin')->middleware(['auth:sanctum'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard']);
+    Route::get('/users', [AdminController::class, 'users']);
+    Route::put('/users/{id}', [AdminController::class, 'updateUser']);
+    Route::get('/analytics/zodiac', [AdminController::class, 'zodiacAnalytics']);
+    Route::get('/system/health', [AdminController::class, 'systemHealth']);
 });
 
 // Zodiac/Astrology Routes
