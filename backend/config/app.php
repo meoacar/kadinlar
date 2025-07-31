@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -123,4 +122,9 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'providers' => [
+        // ...existing code...
+        Laravel\Sanctum\SanctumServiceProvider::class,
+        Illuminate\Filesystem\FilesystemServiceProvider::class,
+    ],
 ];
