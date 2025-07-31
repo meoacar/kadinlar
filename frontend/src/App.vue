@@ -1,61 +1,18 @@
 <template>
   <div class="app">
     <!-- Modern Header -->
-    <header class="header">
-      <div class="logo-area">
-        <img src="/logo.png" alt="KadinAtlasi Logo" class="logo-img" />
-        <h1 class="logo-text">KadinAtlasi.com</h1>
-      </div>
-      <nav>
-        <a href="#" class="nav-link">Ana Sayfa</a>
-        <a href="#" class="nav-link">Burçlar</a>
-        <a href="#" class="nav-link">Kategoriler</a>
-        <a href="#" class="nav-link">Forum</a>
-        <a href="#" class="nav-link">Giriş</a>
-      </nav>
-    </header>
+    <Navbar />
 
-    <!-- Hero Section: Gradient, animasyonlu, büyük -->
-    <section class="hero">
-      <div class="hero-content">
-        <h2 class="hero-title">Kadınlara Özel Dijital Yaşam ve Astroloji Platformu</h2>
-        <p class="hero-text">Astroloji, kişisel gelişim, sağlık, moda ve daha fazlası tek bir platformda!</p>
-        <button class="hero-btn">Hemen Başla</button>
-        <div class="hero-astro">
-          <span v-for="z in zodiacs" :key="z.name" :style="{color: z.color}" class="zodiac-anim">{{ z.symbol }}</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Motivasyon Modülü -->
-    <section class="motivation">
-      <div class="motivation-card">
-        <div class="motivation-icon">✨</div>
-        <div class="motivation-text">{{ dailyMotivation }}</div>
-      </div>
-    </section>
-
-    <!-- Kategoriler: Pastel kartlar -->
-    <section class="categories">
-      <div v-for="cat in categories" :key="cat.name" class="category-card" :style="{background: cat.bg}">
-        <div class="category-icon">{{ cat.icon }}</div>
-        <div class="category-title">{{ cat.name }}</div>
-      </div>
-    </section>
-
-    <!-- Burç Kartları: Renkli, gradientli, animasyonlu -->
-    <section class="zodiac-cards">
-      <div v-for="z in zodiacs" :key="z.name" class="zodiac-card" :style="{background: z.bg}">
-        <div class="zodiac-symbol">{{ z.symbol }}</div>
-        <div class="zodiac-name">{{ z.name }}</div>
-      </div>
-    </section>
+    <!-- Sayfa İçeriği -->
+    <router-view />
 
     <!-- Kullanıcı Girişi ve Dashboard ana sayfadan kaldırıldı -->
   </div>
 </template>
 
 <script>
+
+import Navbar from './components/Navbar.vue'
 import ZodiacCalculator from './components/ZodiacCalculator.vue'
 import AuthForm from './components/AuthForm.vue'
 import AdminDashboard from './components/AdminDashboard.vue'
@@ -64,6 +21,7 @@ import axios from 'axios'
 export default {
   name: 'App',
   components: {
+    Navbar,
     ZodiacCalculator,
     AuthForm,
     AdminDashboard
