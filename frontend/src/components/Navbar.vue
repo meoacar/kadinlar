@@ -19,6 +19,7 @@
             <router-link to="/menstrual" class="dropdown-item" @click="closeDropdown">Regl Takvimi</router-link>
             <router-link to="/pregnancy" class="dropdown-item" @click="closeDropdown">Gebelik Hesaplama</router-link>
             <router-link to="/calorie" class="dropdown-item" @click="closeDropdown">Kalori Takibi</router-link>
+            <router-link to="/payment" class="dropdown-item" @click="closeDropdown">Ödeme Sistemi</router-link>
           </div>
         </transition>
       </div>

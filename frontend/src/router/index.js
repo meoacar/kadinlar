@@ -1,3 +1,4 @@
+import PaymentForm from '../components/PaymentForm.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import BMICalculator from '../components/BMICalculator.vue'
 
@@ -6,6 +7,7 @@ const routes = [
   { path: '/menstrual', name: 'MenstrualCalendar', component: () => import('../components/MenstrualCalendar.vue') },
   { path: '/pregnancy', name: 'PregnancyCalculator', component: () => import('../components/PregnancyCalculator.vue') },
   { path: '/calorie', name: 'CalorieTracker', component: () => import('../components/CalorieTracker.vue') },
+  { path: '/payment', name: 'PaymentForm', component: PaymentForm },
 ]
 
 const router = createRouter({
