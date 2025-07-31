@@ -17,8 +17,8 @@
           <div v-if="showTools" class="dropdown-menu">
             <router-link to="/bmi" class="dropdown-item" @click="closeDropdown">BMI Hesaplayıcı</router-link>
             <router-link to="/menstrual" class="dropdown-item" @click="closeDropdown">Regl Takvimi</router-link>
-            <a href="#" class="dropdown-item" @click="closeDropdown">Gebelik Hesaplama</a>
-            <a href="#" class="dropdown-item" @click="closeDropdown">Kalori Takibi</a>
+            <router-link to="/pregnancy" class="dropdown-item" @click="closeDropdown">Gebelik Hesaplama</router-link>
+            <router-link to="/calorie" class="dropdown-item" @click="closeDropdown">Kalori Takibi</router-link>
           </div>
         </transition>
       </div>

@@ -1,3 +1,10 @@
+use App\Http\Controllers\PaymentController;
+// Ödeme Sistemi
+Route::middleware('auth:api')->group(function() {
+    Route::get('/payments', [PaymentController::class, 'index']);
+    Route::post('/payments', [PaymentController::class, 'store']);
+    Route::get('/payments/{id}', [PaymentController::class, 'show']);
+});
 // Sağlık araçları
 Route::post('/health/menstrual', [App\Http\Controllers\HealthToolsController::class, 'menstrualCycle']);
 
