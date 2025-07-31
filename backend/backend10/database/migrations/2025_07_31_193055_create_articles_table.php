@@ -23,7 +23,18 @@ return new class extends Migration
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
+
+            // Composite index (user_id, published)
+            $table->index(['user_id', 'published']);
+            // Full-text index (content)
+            $table->fullText('content');
         });
+
+        // Partitioning örneği (manuel SQL, migration sonrası çalıştırılmalı)
+        // DB::statement('ALTER TABLE articles PARTITION BY RANGE (YEAR(created_at)) (
+        // PARTITION p2025 VALUES LESS THAN (2026),
+        // PARTITION pmax VALUES LESS THAN MAXVALUE
+        // )');
     }
 
     /**
