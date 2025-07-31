@@ -426,9 +426,9 @@ Amaç: Kadınların kişisel gelişim, astroloji, sağlık, moda, annelik, kariy
 ```
 👤 Kullanıcı Sistemi:
 □ User registration/login (email verification)
-□ Profile management + photo upload
-□ Zodiac sign calculation (automatic)
-□ Role-based access control
+✅ Profile management + photo upload (Yapıldı)
+✅ Zodiac sign calculation (automatic) (Yapıldı)
+✅ Role-based access control (Yapıldı)
 □ Subscription management
 
 📝 İçerik Sistemi:

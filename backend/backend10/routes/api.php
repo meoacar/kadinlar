@@ -1,3 +1,4 @@
+use App\Http\Controllers\ZodiacController;
 <?php
 
 use Illuminate\Http\Request;
@@ -21,6 +22,8 @@ use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Http\JsonResponse;
 
+use App\Http\Controllers\ProfileController;
+
 Route::post('/register', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|string|max:255',
@@ -37,6 +40,14 @@ Route::post('/register', function (Request $request) {
     ]);
     $token = JWTAuth::fromUser($user);
     return response()->json(['user' => $user, 'token' => $token]);
+});
+
+
+// Profil görüntüleme ve güncelleme (JWT auth gerektirir)
+Route::middleware(['auth:api'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'show']);
+    Route::post('/profile', [ProfileController::class, 'update']);
+    Route::get('/zodiac', [ZodiacController::class, 'calculate']);
 });
 
 Route::post('/login', function (Request $request) {
