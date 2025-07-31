@@ -16,7 +16,7 @@
         <transition name="fade-slide">
           <div v-if="showTools" class="dropdown-menu">
             <router-link to="/bmi" class="dropdown-item" @click="closeDropdown">BMI Hesaplayıcı</router-link>
-            <a href="#" class="dropdown-item" @click="closeDropdown">Regl Takvimi</a>
+            <router-link to="/menstrual" class="dropdown-item" @click="closeDropdown">Regl Takvimi</router-link>
             <a href="#" class="dropdown-item" @click="closeDropdown">Gebelik Hesaplama</a>
             <a href="#" class="dropdown-item" @click="closeDropdown">Kalori Takibi</a>
           </div>

@@ -1,3 +1,5 @@
+// Sağlık araçları
+Route::post('/health/menstrual', [App\Http\Controllers\HealthToolsController::class, 'menstrualCycle']);
 
 use App\Http\Controllers\HealthToolsController;
 
